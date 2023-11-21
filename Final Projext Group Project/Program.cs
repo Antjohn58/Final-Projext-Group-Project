@@ -1,3 +1,4 @@
+using Final_Projext_Group_Project.Data;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddSwaggerDocument();
 
+builder.Services.AddDbContext<TeamContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("TeamContext")));
 builder.Services.AddSwaggerDocument();
 
 var app = builder.Build();
