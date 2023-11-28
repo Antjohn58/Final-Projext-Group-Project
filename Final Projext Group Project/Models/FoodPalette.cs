@@ -6,7 +6,7 @@
         public string favFood { get; set; }
         public string pizzaTop { get; set; }
         public string iceFlavor { get; set; }
-        public string mealsPerDay { get; set; }
+        public int mealsPerDay { get; set; }
 
         public string GetDisplayText() => $"{PersonID}  {favFood} {pizzaTop} {iceFlavor} {mealsPerDay}  ";
 
