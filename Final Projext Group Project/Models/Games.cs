@@ -4,7 +4,7 @@
     {
         public string PlayerName { get; set; }
         public string GameTitle { get; set; }
-        public int ReleaseYear{ get; set; }
+        public int ReleaseYear { get; set; }
         public string Genre { get; set; }
         public string System { get; set; }
 
