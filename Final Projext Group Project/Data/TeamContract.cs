@@ -1,6 +1,7 @@
 ﻿namespace Final_Projext_Group_Project.Data
 {
-    public interface ITeamService
+    public interface TeamContract
     {
+
     }
 }
