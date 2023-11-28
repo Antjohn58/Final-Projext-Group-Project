@@ -7,5 +7,6 @@ namespace Final_Projext_Group_Project.Data
     {
         public TeamContext(DbContextOptions<TeamContext> options) : base(options) { }
         public DbSet<Team> Teams { get; set; }
+        public DbSet<Games> Games { get; set; }
     }
 }

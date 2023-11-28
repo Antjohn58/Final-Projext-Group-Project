@@ -9,8 +9,11 @@ builder.Services.AddSwaggerDocument();
 
 builder.Services.AddDbContext<TeamContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("TeamContext")));
-builder.Services.AddScoped<TeamContract, TeamService>();
+
 builder.Services.AddSwaggerDocument();
+
+builder.Services.AddScoped<TeamContract, TeamService>();
+
 
 var app = builder.Build();
 
@@ -22,12 +25,14 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
+
 app.UseOpenApi();
 app.UseSwaggerUi3();
 
