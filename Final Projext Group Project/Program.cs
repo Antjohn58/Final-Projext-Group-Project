@@ -28,6 +28,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+app.UseOpenApi();
+app.UseSwaggerUi3();
 
 app.MapControllerRoute(
     name: "default",

@@ -4,14 +4,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Final_Projext_Group_Project.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class TeamController : Controller
     {
-        [ApiController]
-        [Route("[controller]")]
-        public class ItemController : Controller
-        {
+
             TeamContract ctx;
-            public ItemController(TeamContract contract)
+            public TeamController(TeamContract contract)
             {
                 ctx = contract;
             }
@@ -25,7 +24,7 @@ namespace Final_Projext_Group_Project.Controllers
             [HttpPost]
             public IActionResult Post(Team i)
             {
-                var result = ctx.AddItem(i);
+                var result = ctx.AddTeam(i);
                 if (result == null)
                 {
                     return StatusCode(500, "A Product with this ID already exists");
@@ -39,4 +38,4 @@ namespace Final_Projext_Group_Project.Controllers
 
         }
     }
-    }
+    

@@ -4,7 +4,7 @@ namespace Final_Projext_Group_Project.Data
 {
     public interface TeamContract
     {
-        int? AddItem(Team i);
+        int? AddTeam(Team i);
         List<Team> GetAllTeams();
         Team GetTeamById(int Id);
     }
