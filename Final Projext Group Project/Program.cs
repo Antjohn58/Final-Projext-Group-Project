@@ -9,6 +9,7 @@ builder.Services.AddSwaggerDocument();
 
 builder.Services.AddDbContext<TeamContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("TeamContext")));
+builder.Services.AddScoped<TeamContract, TeamService>();
 builder.Services.AddSwaggerDocument();
 
 var app = builder.Build();
