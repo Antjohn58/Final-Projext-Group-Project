@@ -9,23 +9,17 @@ namespace Final_Projext_Group_Project.Data
         {
             ctx = Context;
         }
-
-        public int? AddItem(Team i)
-        {
-            throw new NotImplementedException();
-        }
-
         public int? AddTeam(Team i)
         {
-            var product = this.GetTeamById(i.Id);
-            if (product != null)
+            var team = this.GetTeamById(i.Id);
+            if (team != null)
             {
                 return null;
             }
             ctx.Teams.Add(i);
             return ctx.SaveChanges();
         }
-        public List<Team> GetAllTeam()
+        public List<Team> GetAllTeams()
         {
             return ctx.Teams.ToList();
         }
@@ -33,16 +27,6 @@ namespace Final_Projext_Group_Project.Data
         public Team GetTeamById(int Id)
         {
             return ctx.Teams.FirstOrDefault(x => x.Id == Id);
-        }
-
-        List<Team> TeamContract.GetAllTeams()
-        {
-            throw new NotImplementedException();
-        }
-
-        Team TeamContract.GetTeamById(int Id)
-        {
-            throw new NotImplementedException();
         }
         public int? RemoveTeambyId(int id)
         {
@@ -66,10 +50,16 @@ namespace Final_Projext_Group_Project.Data
             return ctx.SaveChanges();
         }
 
-        public int? UpdateTeam(Team i)
+        public int? UpdateProduct(Team i)
         {
             ctx.Teams.Update(i);
             return ctx.SaveChanges();
         }
+
+        public int? UpdateTeam(Team i)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
+
