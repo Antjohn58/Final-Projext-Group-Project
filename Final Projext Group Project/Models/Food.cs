@@ -1,6 +1,6 @@
 ﻿namespace Final_Projext_Group_Project.Models
 {
-    public class FoodPalette
+    public class Food
     {
         public int PersonID { get; set; }
         public string favFood { get; set; }
