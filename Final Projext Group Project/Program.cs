@@ -13,7 +13,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("FinalContext")))
 builder.Services.AddSwaggerDocument();
 
 builder.Services.AddScoped<TeamContract, TeamService>();
-
+builder.Services.AddScoped<GameContract, GameService>();
 
 var app = builder.Build();
 

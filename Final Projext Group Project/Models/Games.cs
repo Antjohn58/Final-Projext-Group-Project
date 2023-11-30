@@ -8,6 +8,6 @@
         public string Genre { get; set; }
         public string System { get; set; }
 
-        public string GetDisplayText() => $"{PlayerName}  {GameTitle} {ReleaseYear} {Genre} {System}  ";
+        public string GetDisplayText() => $"{Id}  {GameTitle} {ReleaseYear} {Genre} {System}  ";
     }
 }
