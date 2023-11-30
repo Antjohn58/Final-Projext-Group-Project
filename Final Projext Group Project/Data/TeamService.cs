@@ -4,8 +4,8 @@ namespace Final_Projext_Group_Project.Data
 {
     public class TeamService : TeamContract
     {
-        TeamContext ctx;
-        public TeamService(TeamContext Context)
+        FinalContext ctx;
+        public TeamService(FinalContext Context)
         {
             ctx = Context;
         }

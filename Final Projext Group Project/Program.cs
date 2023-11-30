@@ -7,8 +7,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<TeamContext>(options =>
-options.UseSqlServer(builder.Configuration.GetConnectionString("TeamContext")));
+builder.Services.AddDbContext<FinalContext>(options =>
+options.UseSqlServer(builder.Configuration.GetConnectionString("FinalContext")));
 
 builder.Services.AddSwaggerDocument();
 
@@ -59,7 +59,7 @@ app.Use(async (context, next) =>
 
 using (var scope = app.Services.CreateScope())
 {
-    var context = scope.ServiceProvider.GetRequiredService<TeamContext>();
+    var context = scope.ServiceProvider.GetRequiredService<FinalContext>();
     context.Database.EnsureCreated();
 }
 
