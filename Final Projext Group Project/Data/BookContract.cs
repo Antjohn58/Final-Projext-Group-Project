@@ -4,11 +4,11 @@ namespace Final_Projext_Group_Project.Data
 {
     public interface BookContract
     {
-        int? AddTeam(Team i);
-        List<Team> GetAllTeams();
-        Team GetTeamById(int Id);
-        int? RemoveTeamById(int id);
-        int? UpdateTeam(Team i);
+        int? AddBook(Book b);
+        List<Book> GetAllBooks();
+        Book GetBookById(int Id);
+        int? RemoveBookById(int id);
+        int? UpdateBook(Book b);
     }
 }
 }

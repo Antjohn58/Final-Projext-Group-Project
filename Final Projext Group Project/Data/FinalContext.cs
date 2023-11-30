@@ -9,6 +9,7 @@ namespace Final_Projext_Group_Project.Data
         public DbSet<Team> Teams { get; set; }
         public DbSet<Game> Games { get; set; }
         public DbSet<FoodPalette> FoodPalettes { get; set; }
+        public DbSet <Book> Books { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Team>().HasData(
