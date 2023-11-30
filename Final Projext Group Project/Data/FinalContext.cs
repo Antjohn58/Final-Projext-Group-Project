@@ -8,7 +8,7 @@ namespace Final_Projext_Group_Project.Data
         public FinalContext(DbContextOptions<FinalContext> options) : base(options) { }
         public DbSet<Team> Teams { get; set; }
         public DbSet<Game> Games { get; set; }
-        public DbSet<FoodPalette> FoodPalettes { get; set; }
+        public DbSet<Food> Foods{ get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Team>().HasData(
