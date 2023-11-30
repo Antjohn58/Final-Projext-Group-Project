@@ -9,28 +9,28 @@ namespace Final_Projext_Group_Project.Data
         {
             ctx = Context;
         }
-        public int? AddGame(Games i)
+        public int? AddGame(Game g)
         {
-            var game = this.GetGamesById(i.Id);
+            var game = this.GetGameById(g.Id);
             if (game != null)
             {
                 return null;
             }
-            ctx.Games.Add(i);
+            ctx.Games.Add(g);
             return ctx.SaveChanges();
         }
-        public List<Games> GetAllGames()
+        public List<Game> GetAllGames()
         {
             return ctx.Games.ToList();
         }
 
-        public Games GetGamesById(int Id)
+        public Game GetGameById(int Id)
         {
             return ctx.Games.FirstOrDefault(x => x.Id == Id);
         }
-        public int? RemoveGamesbyId(int id)
+        public int? RemoveTeambyId(int id)
         {
-            var game = this.GetGamesById(id);
+            var game = this.GetGameById(id);
             if (game == null)
             {
                 return null;
@@ -39,9 +39,9 @@ namespace Final_Projext_Group_Project.Data
             return ctx.SaveChanges();
         }
 
-        public int? RemoveGamesById(int id)
+        public int? RemoveGameById(int id)
         {
-            var game = this.GetGamesById(id);
+            var game = this.GetGameById(id);
             if (game == null)
             {
                 return null;
@@ -50,16 +50,12 @@ namespace Final_Projext_Group_Project.Data
             return ctx.SaveChanges();
         }
 
-        public int? UpdateProduct(Games i)
+        public int? UpdateGame(Game g)
         {
-            ctx.Games.Update(i);
+            ctx.Games.Update(g);
             return ctx.SaveChanges();
         }
 
-        public int? UpdateGames(Games i)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 
