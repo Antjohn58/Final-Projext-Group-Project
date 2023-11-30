@@ -18,7 +18,7 @@ namespace Final_Projext_Group_Project.Controllers
         [Route("api/getBooks")]
         public ActionResult Get()
         {
-            return Ok(ctx.GetAllTeams());
+            return Ok(ctx.GetAllBooks());
         }
         [HttpGet("id")]
         public IActionResult Get(int id)
@@ -43,7 +43,7 @@ namespace Final_Projext_Group_Project.Controllers
         [HttpPut]
         public IActionResult Put(Book b)
         {
-            var result = ctx.UpdateTeam(b);
+            var result = ctx.UpdateBook(b);
             if (result == 0)
             {
                 return StatusCode(500, "An error occured while processing your request");

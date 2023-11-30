@@ -28,7 +28,7 @@ namespace Final_Projext_Group_Project.Data
         {
             return ctx.Games.FirstOrDefault(x => x.Id == Id);
         }
-        public int? RemoveTeambyId(int id)
+        public int? RemoveGamebyId(int id)
         {
             var game = this.GetGameById(id);
             if (game == null)

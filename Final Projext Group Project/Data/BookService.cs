@@ -5,60 +5,55 @@ namespace Final_Projext_Group_Project.Data
     public class BookService : BookContract
     {
         FinalContext ctx;
-        public TeamService(FinalContext Context)
+        public BookService(FinalContext Context)
         {
             ctx = Context;
         }
-        public int? AddTeam(Team i)
+        public int? AddBook(Book b)
         {
-            var team = this.GetTeamById(i.Id);
-            if (team != null)
+            var book = this.GetBookById(b.Id);
+            if (book != null)
             {
                 return null;
             }
-            ctx.Teams.Add(i);
+            ctx.Books.Add(b);
             return ctx.SaveChanges();
         }
-        public List<Team> GetAllTeams()
+        public List<Book> GetAllBooks()
         {
-            return ctx.Teams.ToList();
+            return ctx.Books.ToList();
         }
 
-        public Team GetTeamById(int Id)
+        public Book GetBookById(int Id)
         {
-            return ctx.Teams.FirstOrDefault(x => x.Id == Id);
+            return ctx.Books.FirstOrDefault(x => x.Id == Id);
         }
-        public int? RemoveTeambyId(int id)
+        public int? RemoveBookbyId(int id)
         {
-            var team = this.GetTeamById(id);
-            if (team == null)
+            var book = this.GetBookById(id);
+            if (book == null)
             {
                 return null;
             }
-            ctx.Teams.Remove(team);
+            ctx.Books.Remove(book);
             return ctx.SaveChanges();
         }
 
-        public int? RemoveTeamById(int id)
+        public int? RemoveBookById(int id)
         {
-            var team = this.GetTeamById(id);
-            if (team == null)
+            var book = this.GetBookById(id);
+            if (book == null)
             {
                 return null;
             }
-            ctx.Teams.Remove(team);
+            ctx.Books.Remove(book);
             return ctx.SaveChanges();
         }
 
-        public int? UpdateProduct(Team i)
+        public int? UpdateBook(Book b)
         {
-            ctx.Teams.Update(i);
+            ctx.Books.Update(b);
             return ctx.SaveChanges();
-        }
-
-        public int? UpdateTeam(Team i)
-        {
-            throw new NotImplementedException();
         }
     }
 }
