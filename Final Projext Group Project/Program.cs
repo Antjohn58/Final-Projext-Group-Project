@@ -16,6 +16,7 @@ builder.Services.AddScoped<TeamContract, TeamService>();
 builder.Services.AddScoped<GameContract, GameService>();
 builder.Services.AddScoped<BookContract, BookService>();
 builder.Services.AddScoped<FoodContract, FoodService>();
+builder.Services.AddScoped<MovieContract, MovieService>();
 
 var app = builder.Build();
 

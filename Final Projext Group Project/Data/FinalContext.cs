@@ -10,6 +10,7 @@ namespace Final_Projext_Group_Project.Data
         public DbSet<Game> Games { get; set; }
         public DbSet<Food> Foods { get; set; }
         public DbSet <Book> Books { get; set; }
+        public DbSet <Movie> Movies { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Team>().HasData(

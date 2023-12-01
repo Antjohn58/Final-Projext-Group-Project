@@ -50,16 +50,12 @@ namespace Final_Projext_Group_Project.Data
             return ctx.SaveChanges();
         }
 
-        public int? UpdateProduct(Team i)
+        public int? UpdateTeam(Team i)
         {
             ctx.Teams.Update(i);
             return ctx.SaveChanges();
         }
 
-        public int? UpdateTeam(Team i)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
 
