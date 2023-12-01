@@ -9,14 +9,14 @@ namespace Final_Projext_Group_Project.Data
         {
             ctx = Context;
         }
-        public int? AddFood(Food i)
+        public int? AddFood(Food f)
         {
-            var food = this.GetFoodById(i.PersonID);
+            var food = this.GetFoodById(f.Id);
             if (food != null)
             {
                 return null;
             }
-            ctx.Foods.Add(i);
+            ctx.Foods.Add(f);
             return ctx.SaveChanges();
         }
         public List<Food> GetAllFoods()
@@ -26,7 +26,7 @@ namespace Final_Projext_Group_Project.Data
 
         public Food GetFoodById(int Id)
         {
-            return ctx.Foods.FirstOrDefault(x => x.PersonID == Id);
+            return ctx.Foods.FirstOrDefault(x => x.Id == Id);
         }
         public int? RemoveFoodbyId(int id)
         {
@@ -50,15 +50,10 @@ namespace Final_Projext_Group_Project.Data
             return ctx.SaveChanges();
         }
 
-        public int? UpdateProduct(Food i)
+        public int? UpdateFood(Food f)
         {
-            ctx.Foods.Update(i);
+            ctx.Foods.Update(f);
             return ctx.SaveChanges();
-        }
-
-        public int? UpdateFood(Food i)
-        {
-            throw new NotImplementedException();
         }
     }
 }

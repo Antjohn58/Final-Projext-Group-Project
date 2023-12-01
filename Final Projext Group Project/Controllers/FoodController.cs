@@ -27,12 +27,12 @@ namespace Final_Projext_Group_Project.Controllers
         }
 
         [HttpPost]
-        public IActionResult Post(Food i)
+        public IActionResult Post(Food f)
         {
-            var result = ctx.AddFood(i);
+            var result = ctx.AddFood(f);
             if (result == null)
             {
-                return StatusCode(500, "A Product with this ID already exists");
+                return StatusCode(500, "A Food with this ID already exists");
             }
             if (result == 0)
             {
@@ -41,9 +41,9 @@ namespace Final_Projext_Group_Project.Controllers
             return Ok();
         }
         [HttpPut]
-        public IActionResult Put(Food i)
+        public IActionResult Put(Food f)
         {
-            var result = ctx.UpdateFood(i);
+            var result = ctx.UpdateFood(f);
             if (result == 0)
             {
                 return StatusCode(500, "An error occured while processing your request");

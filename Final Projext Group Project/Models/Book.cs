@@ -8,6 +8,6 @@
         public string Author { get; set; }
         public string Genre { get; set; }
 
-        public string GetDisplayText() => $"{Id}  {Name} {Book} {Author} {Genre}  ";
+        public string GetDisplayText() => $"{Id}  {Name} {BookTitle} {Author} {Genre}  ";
     }
 }
